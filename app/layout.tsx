@@ -3,10 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { AppSidebar } from "@/components/app-sidebar"
-import { Footer } from "@/components/footer"
 import { ClientProviders } from "@/components/client-providers"
-
-
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -25,10 +22,7 @@ export default function RootLayout({
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={inter.className}>
         <ClientProviders>
-          <div className="flex min-h-screen">
-            <AppSidebar />
-            <main className="flex-1 ml-[3rem] md:ml-[16rem] transition-[margin]">{children}</main>
-          </div>
+          {children}
         </ClientProviders>
       </body>
     </html>
